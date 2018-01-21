@@ -1,6 +1,7 @@
 package proz;
 
-import javax.ws.rs.client.*;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.MediaType;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -18,7 +19,7 @@ public class RESTClient {
         .get(Student.class);
   }
   
-  public static void main(String [ ] args) {
+  public static void main(String [] args) {
     int randomId = ThreadLocalRandom.current().nextInt(0,  256);
     RESTClient rest = new RESTClient();
     Student sample = rest.getSampleStudent(randomId);
